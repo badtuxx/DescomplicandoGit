@@ -14,6 +14,10 @@
     - [Enviando o conteúdo para o repositório remoto](#enviando-o-conteúdo-para-o-repositório-remoto)
     - [Clonando o repositório remoto](#clonando-o-repositório-remoto)
     - [Adicionando a nossa primeira receita](#adicionando-a-nossa-primeira-receita)
+    - [Branches](#branches)
+    - [Fazendo o merge da branch segunda-receita para a branch main](#fazendo-o-merge-da-branch-segunda-receita-para-a-branch-main)
+    - [Deletando a branch segunda-receita](#deletando-a-branch-segunda-receita)
+    - [Conflitos](#conflitos)
 
 *******
 
@@ -866,3 +870,357 @@ O Livro foi iniciado com cinco receitas adicionadas e testadas pelo Jeferson, as
 Pronto, já ficou melhor o nosso README.md, assim as pessoas conseguiram ver a nossa primeira receita.
 
 &nbsp;
+
+
+### Branches
+
+&nbsp;
+
+Uma coisa super importante quando estamos falando sobre um repositório que está sendo utilizado por mais de uma pessoa é o uso de branches. Branches são utilizados para que você possa trabalhar em um projeto sem afetar o trabalho de outras pessoas.
+
+Com isso, podemos deixar a nossa branch principal **main** sempre estável e pronta para ser utilizada em produção. E podemos criar outras branches para trabalhar em novas funcionalidades, correções de bugs, etc.
+
+No nosso caso, vamos imaginar que temos que deixar na nossa branch main apenas as receitas que já foram testadas e aprovadas por mim, pois assim eu posso garantir que as pessoas que forem utilizar o nosso livro de receitas não vão ter problemas com as nossas receitas.
+
+Uma branch nada mais é do que um espaço onde você pode trabalhar de forma isolada e muito mais seguro, pois a branch principal tem que ser sempre muito protegida, afinal os nossos usuários podem estar utilizando ela.
+
+&nbsp;
+
+Vamos criar uma nova branch para trabalhar em uma nova receita.
+
+```bash
+git checkout -b segunda-receita
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+Switched to a new branch 'segunda-receita'
+```
+
+&nbsp;
+
+Agora nós temos uma nova branch chamada segunda-receita, e seu conteúdo é exatamente igual a branch main, pois foi como se tivessemos tirado uma foto da branch main e criado uma nova branch com esse conteúdo.
+Todas as alterações que fizermos na branch segunda-receita não afetarão a branch main, somente quando fizermos o merge da branch segunda-receita para a branch main, mas isso é uma assunto para outro momento.
+
+&nbsp;
+
+Vamos criar um novo arquivo para a nossa segunda receita.
+
+```bash
+touch receitas/farofa-vegana.md
+```
+
+&nbsp;
+
+Agora vamos adicionar o conteúdo do nosso arquivo **farofa-vegana.md**.
+
+```markdown
+# Farofa Vegana
+
+&nbsp;
+## Para quantas pessoas?
+
+- 4 pessoas
+
+&nbsp;
+## Ingredientes
+- 1 cebola picada
+- 2 bananas picadas
+- 4 colheres de azeite ou óleo de sua preferência
+- Sal a gosto 
+- Pimenta do reino a gosto
+- Salsinha a gosto
+- Paprica a gosto
+- 3 xícaras de farinha de mandioca
+- 4 dentes de alho picados
+
+&nbsp;
+## Modo de Preparo
+
+Primeiro aqueça uma panela e adicione o azeite ou óleo, na sequência adicione a cebola e deixe refogar por alguns minutos em fogo baixo, em seguida adicione o alho e deixe refogar até o alho ficar mais dourado, mas cuidado para não queimar nada.
+
+Agora já podemos adicionar a banana, o sal, a pimenta, a salsinha e a paprica, misture bem mas sempre com muito cuidado para não desmanchar ou quebrar muito as bananas. Quando a banana começar a ficar mais mole, é a hora de adicionar a farinha de mandioca, misture bem e deixe cozinhar por alguns minutos, sempre mexendo para não grudar no fundo da panela.
+
+A farinha de mandioca vai ficar bem sequinha, mas não pode queimar, pois senão irá mudar o sabor da farofa.
+
+Após alguns minutos, com a farinha de mandioca mais sequinha e com a cor bem dourada, é hora de desligar o fogo e servir.
+
+&nbsp;
+
+## Dicas
+
+- Se você quiser, pode adicionar um pouco de molho de tomate na farofa e um pouco de tofu defumado, sua farofa ficará ainda mais saborosa.
+```
+
+&nbsp;
+
+Pronto, já temos o conteúdo da nossa segunda receita, já podemos atualizar o nosso repo. Lembrando que estamos modificando somente a branch segunda-receita, a branch main continua intacta.
+
+```bash
+git add .
+git commit -m "Adicionando a receita de farofa vegana"
+git push origin segunda-receita
+```
+
+&nbsp;
+
+Agora a nossa segunda receita já está no nosso repositório remoto, mas ainda não está na branch main.
+
+&nbsp;
+
+Se você for no seu repositório remoto, vai ver que a branch segunda-receita foi criada e que ela tem um commit a mais que a branch main.
+
+[Branches](images/branches.png)
+
+
+&nbsp;
+
+Para que você possa verificar todas as branches do seu repositório, você pode utilizar o comando:
+
+```bash
+git branch -a
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+  main
+* segunda-receita
+  remotes/origin/main
+  remotes/origin/segunda-receita
+
+```
+
+&nbsp;
+
+Onde:
+
+- **main**: é a branch principal do seu repositório
+  
+- **segunda-receita**: é a branch que criamos para trabalhar na nossa segunda receita
+
+- **remotes/origin/main**: é a branch principal do seu repositório remoto
+
+- **remotes/origin/segunda-receita**: é a branch que criamos para trabalhar na nossa segunda receita no repositório remoto
+
+E como você pode ver, a branch segunda-receita está com um asterisco na frente, isso significa que estamos trabalhando nela.
+
+Simples, não?
+
+&nbsp;
+
+Vamos atualizar o nosso README.md para adicionar a nossa segunda receita.
+
+```markdown
+# DevChef
+
+## Sobre o Projeto
+
+Livro criado por pessoas que estavam aprendendo a ferramenta de versionamento de códigos Git com o Jeferson na LINUXtips.
+
+&nbsp;
+## Livro de Receitas Veganas
+
+O Livro foi iniciado com cinco receitas adicionadas e testadas pelo Jeferson, as demais foram adicionadas pela comunidade de pessoas que estavam focadas em aprender Git e ter um almoço vegano!
+
+&nbsp;
+## Receitas
+
+&nbsp;
+#### Conteúdo 
+
+&nbsp;
+#### Receita 1
+- [Arroz dos Devs!](receitas/arroz.md)
+
+&nbsp;
+#### Receita 2
+- [Farofa Vegana!](receitas/farofa-vegana.md)
+
+&nbsp;
+#### Receita 3
+
+&nbsp;
+#### Receita 4
+
+&nbsp;
+#### Receita 5
+```
+
+&nbsp;
+
+Vamos atualizar o nosso repo.
+
+```bash
+git commit -m "Adicionando a receita de farofa vegana no README.md" -a
+git push origin segunda-receita
+```
+
+&nbsp;
+
+Pronto! Branch segunda-receita atualizada.
+
+&nbsp;
+
+### Fazendo o merge da branch segunda-receita para a branch main
+
+Vamos imaginar que o time que está desenvolvendo esse livro de receitas, decidiu que a segunda receita está pronta para ser adicionada ao livro, portanto, podemos fazer o merge da branch segunda-receita para a branch main.
+
+Mas o que é um merge?
+
+O merge é a união de duas branches, onde você está unindo o conteúdo da branch A para a branch B. No nosso caso, estamos unindo a branch segunda-receita para a branch main.
+
+Durante o merge você está pedindo para o Git, que ele faça a união das duas branches, mas o Git não vai fazer isso de qualquer forma, ele vai verificar se existe algum conflito entre as duas branches, se existir, ele vai te avisar e você terá que resolver o conflito manualmente.
+
+Nós ainda vamos falar sobre conflitos, mas por enquanto, vamos fazer o merge da branch segunda-receita para a branch main.
+
+Lembrando que o que queremos é adicionar todo o conteúdo novo que criamos na branch segunda-receita para a branch main.
+
+&nbsp;
+
+Vamos para a branch main.
+
+```bash
+git checkout main
+```
+
+&nbsp;
+
+Agora vamos fazer o merge da branch segunda-receita para a branch main.
+
+```bash
+git merge segunda-receita
+```
+
+&nbsp;
+
+O comando acima pediu para o Git pegar o conteúdo da branch segunda-receita e adicionar para a branch main, uni-las, atualizando a nossa branch main.
+
+A saida do comando será algo parecido com isso:
+
+```bash
+Updating 7def92f..9eb025b
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+&nbsp;
+
+Se tivesse algum conflito para resolver, seria nesse momento que o Git iria reclamar e pedir para você resolver o conflito.
+
+Lembrando que sempre você poderá utilizar o comando git log para verificar o histórico de commits do seu repositório.
+
+O próximo passo é atualizar o nosso repositório remoto.
+
+```bash
+git push origin main
+```
+
+&nbsp;
+
+Pronto! Agora a nossa branch main está com o conteúdo da branch segunda-receita.
+
+[Branch main](images/branch-main.png)
+
+&nbsp;
+
+### Deletando a branch segunda-receita
+
+Agora não precisamos continuar com a branch segunda-receita, pois já fizemos o merge dela para a branch main, portanto, podemos deletar a branch segunda-receita.
+
+```bash
+git branch -d segunda-receita
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+Deleted branch segunda-receita (was 9eb025b).
+```
+
+&nbsp;
+
+Vamos verificar se a branch segunda-receita foi realmente deletada.
+
+```bash
+git branch
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+* main
+```
+
+&nbsp;
+
+Se você usar o comando git branch -a, você vai ver que a branch segunda-receita não existe mais no repositório local, mas ela ainda existe no repositório remoto.
+
+```bash
+* main
+  remotes/origin/main
+  remotes/origin/segunda-receita
+```
+
+&nbsp;
+
+Vamos atualizar o nosso repositório remoto.
+
+```bash
+git push origin --delete segunda-receita
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+To github.com:badtuxx/DevChef.git
+ - [deleted]         segunda-receita
+
+```
+
+&nbsp;
+
+Vamos listar as branches do nosso repositório local e remoto novamente.
+
+```bash
+git branch -a
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+
+```bash
+* main
+  remotes/origin/main
+```
+
+&nbsp;
+
+Já era! A branch segunda-receita foi deletada do nosso repositório local e remoto.
+
+&nbsp;
+
+Nós poderiamos ter feito esse processo de merge e de delete da nossa branch diretamente na interface do GitHub, mas como estamos aprendendo, vamos fazer tudo pelo terminal. O foco aqui é o Git e não o GitHub. :D
+
+&nbsp;
+
+### Conflitos
+
+WIP
+
+
+
