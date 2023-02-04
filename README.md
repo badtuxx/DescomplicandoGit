@@ -3,11 +3,16 @@
 *******
 - [Descomplicando o GIT](#descomplicando-o-git)
   - [A proposta do material](#a-proposta-do-material)
-  - [O Livro: DevChef](#o-livro-devchef)
+  - [O Livro: DevChef ???](#o-livro-devchef-)
   - [Sobre o material Descomplicando o Git](#sobre-o-material-descomplicando-o-git)
   - [Vamos começar!](#vamos-começar)
-    - [Git?](#git)
+    - [O que é o git?](#o-que-é-o-git)
     - [Criando o repo do nosso livro](#criando-o-repo-do-nosso-livro)
+    - [Compartilhando o nosso repositório](#compartilhando-o-nosso-repositório)
+    - [Adicionando a nossa chave SSH no GitHub](#adicionando-a-nossa-chave-ssh-no-github)
+    - [Conectando o repositório local com o repositório remoto](#conectando-o-repositório-local-com-o-repositório-remoto)
+    - [Enviando o conteúdo para o repositório remoto](#enviando-o-conteúdo-para-o-repositório-remoto)
+
 
 *******
 <div id='proposta-do-material'/>  
@@ -30,6 +35,7 @@ Depois é só abrir um PR lá no Github que faremos o commit para a main!
 
 Assim teremos um livro bem foda, totalmente criado pela comunidade Dev!
 
+
 ## O Livro: DevChef
 <div id='livro-devchef'/> 
 &nbsp;
@@ -37,6 +43,7 @@ Assim teremos um livro bem foda, totalmente criado pela comunidade Dev!
 Precisamos ter um nome para o nosso livro, eu vou deixar como DevChef por enquanto, mas é claro, se alguém tiver uma ideia melhor é só falar, abre uma issue aqui no Github com a sugestão!
 
 O endereço do repositório do nosso livro de receitas é o:
+
 
 🔗 [github.com/badtuxx/DevChef](https://github.com/badtuxx/DevChef)
 
@@ -47,6 +54,7 @@ Lembre-se, o nosso livro será vegano! Mesmo que você não seja, vamos fazer es
 &nbsp;
 ## Sobre o material Descomplicando o Git
 <div id='descomplicando-git'/>  
+
 
 Vamos criar o nosso livro de receitas, mas o objetivo principal é aprender sobre o Git. E aqui não queremos aprender o Git decoreba, queremos aprender o Git que é usado no dia a dia! 
 
@@ -73,7 +81,6 @@ Se você ainda está vendo esse texto, significa que ainda não temos essas pess
 
 Como base para esse material nós vamos utilizar a documentação oficial do projeto, que você pode acessar através dessa url:
 
-
 🔗 [https://git-scm.com/docs](https://git-scm.com/docs)
 
 Ahhh, e parabéns demais para a galera envolvida na construção dessa doc, e mais do que isso, parabéns para a galera empenhada em fazer a tradução desse material para o Português! Boa parte da documentação está em Português e com uma qualidade excelente!
@@ -98,6 +105,7 @@ Pois bem, dito isso, o que precisamos entender é como o Git funciona, e para is
 
 Então chegou a hora de começar a criar o nosso livro de receitas DevChef e iniciar a nossa jornada de aprendizado com o Git.
 
+&nbsp;
 ### Criando o repo do nosso livro
 
 Muito bem, agora já sabemos que o nosso projeto será um livro de receitas, o que precisamos fazer é começar a trabalhar!
@@ -224,6 +232,19 @@ Logo menos você vai entender tudo e ver o quanto isso salva vidas!
 Vamos somente definir uma coisa, a nossa branch main vai ser a nossa principal, como se fosse a versão estável, a versão que poderia ser publicada em produção, certo?
 
 Por enquanto é isso sobre branches, mas como eu disse, vamos falar muito sobre elas.
+
+Vamos fazer algumas configurações básicas do Git, para isso vamos utilizar o comando abaixo:
+
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "
+```
+
+Essas são as configurações básicas, mas você pode configurar outras coisas, como por exemplo, o editor de texto que você quer utilizar, para isso utilize o comando abaixo:
+
+```bash
+git config --global core.editor "vim"
+```
 
 &nbsp;
 
@@ -370,5 +391,260 @@ nothing to commit, working tree clean
 O que ele está dizendo que não precisamos adicionar mais nada, pois já adicionamos o arquivo que queríamos adicionar.
 
 Para cada commit, o git cria um checksum, que é um código que identifica o commit. Esse código é gerado a partir do conteúdo do arquivo, então se você fizer uma alteração no arquivo, o checksum vai mudar. Isso é pra garantir que você não vai perder nenhuma alteração.
+
+&nbsp;
+
+Uma coisa bem legal é utilizar o comando git log para ver os commits que você fez.
+
+```bash
+git log
+```
+
+&nbsp;
+
+A saída do comando será a seguinte:
+
+```bash
+commit 1cd4e1b20df73c2cb24694ab6b9fbb518a19a62e (HEAD -> main)
+Author: Jeferson Fernando <jeferson@linuxtips.io>
+Date:   Sat Feb 4 18:33:30 2023 +0100
+
+    Adicionando o arquivo README.md
+```
+
+&nbsp;
+
+O que o git log faz é listar todos os commits que você fez, mostrando o checksum, o autor, a data e a mensagem do commit.
+
+Podemos deixar essa saída mais bonita, utilizando o comando git log --oneline.
+
+```bash
+1cd4e1b (HEAD -> main) Adicionando o arquivo README.md
+```
+
+&nbsp;
+
+Nesse caso ele nem mostra o autor, nem a data, apenas o checksum e a mensagem do commit, e ainda o checksum fica mais curto, pois ele adiciona somente as 7 primeiras letras do checksum.
+
+Iremos ver muito o git log, pois é muito útil para entender todo o histórico do seu projeto.
+
+&nbsp;
+
+### Compartilhando o nosso repositório
+
+Agora que já temos o nosso repo criado e gerenciado pelo Git, precisamos compartilhar ele com todo mundo, assim todas as pessoas poderão adicionar novas receitas ou corrigir os erros que existem no conteúdo que criamos.
+
+Para compartilhar o nosso repositório, precisamos criar um repositório remoto no GitHub. Temos outras opções, como o GitLab, Bitbucket, etc, mas vamos utilizar o GitHub por ser o mais popular e por ser gratuito, pelo menos para o que vamos utilizar.
+
+&nbsp;
+
+Para criar o seu repositorio no GitHub, você precisa acessar o site do GitHub e fazer o login. Depois de fazer o login, clique no botão com o sinal '+' e depois New Repository, que fica no canto superior direito da tela.
+
+![Criando um novo repositório no GitHub](images/tela-criando-repositorio-github.png)
+
+&nbsp;
+
+Agora você precisa preencher o nome do seu repositório, lembre-se, o nome do repositóprio precisa ser igual ao do nosso e-book, somente para que fique mais fácil de eu conferir o trabalho de vocês depois.
+
+Então o nome do repositório deve ser **DevChef-LINUXtips** e deverá ser público. Não esquente a cabeça com a descrição e o README, pois já criamos. Não precisa mudar mais nada por enquanto, então clique em Create repository.
+
+![Criando um novo repositório no GitHub](images/tela-criando-repositorio-github-2.png)
+
+&nbsp;
+
+Pronto, repo criado no GitHub. Agora precisamos conectar o nosso repositório local com o repositório remoto.
+
+Perceba que quando você criou o repo no Github, a próxima tela que apareceu foi essa:
+
+![Criando um novo repositório no GitHub](images/tela-criando-repositorio-github-3.png)
+
+&nbsp;
+
+Onde ele exibe algumas algumas instruções de como conectar o seu repositório local com o repositório remoto, seja um repositório que você já tenha ou um repositório que você acabou de criar. 
+
+No nosso caso, nós já temos um repositório local, então vamos utilizar a segunda opção, que é a que está com o título **…or push an existing repository from the command line**.
+
+&nbsp;
+
+Vamos voltar para o nosso terminal para que possamos conectar o nosso repositorio local com o repositório remoto.
+
+
+### Adicionando a nossa chave SSH no GitHub
+
+Antes de conectar o repositório local com o repositório remoto, precisamos adicionar a nossa chave SSH no GitHub. Isso é necessário para que o GitHub saiba que você é o dono do repositório e que você tem permissão para fazer alterações no repositório. 
+
+Você pode utilizar autenticacao via senha, mas vamos fazer da maneira mais elegante e segura, que é utilizando a autenticação via chave SSH.
+
+Antes de mais nada, vamos criar uma chave SSH. Para isso, vamos utilizar o comando ssh-keygen.
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "Nossa chave SSH"
+```
+
+&nbsp;
+
+O que esse comando faz é criar uma chave SSH com o algoritmo RSA, com 4096 bits e com a descrição **Nossa chave SSH**.
+
+A saida do comando será essa:
+
+```bash
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/jeferson/.ssh/id_rsa): /home/jeferson/.ssh/id_rsa_git
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/jeferson/.ssh/id_rsa_git
+Your public key has been saved in /home/jeferson/.ssh/id_rsa_git.pub
+The key fingerprint is:
+SHA256:+JCvAhk34WLjAbkDBA3IvtsaZBdEhMkV6CfmrrxkasQ Nossa chave SSH
+The key's randomart image is:
++---[RSA 4096]----+
+|O=B*.            |
+|=*o .            |
+|+o o .           |
+|o=*.=  o         |
+|+*+O .+ S        |
+|oE=    +         |
+|o+o.    o        |
+|=+...  .         |
+|=+o  ..          |
++----[SHA256]-----+
+```
+
+&nbsp;
+
+Eu criei a chave SSH com o nome **id_rsa_git**, mas você pode criar com o nome que quiser, o padrão é **id_rsa**.
+
+Agora vamos adicionar a nossa chave SSH no GitHub. Para isso, vamos utilizar o comando ssh-add.
+
+```bash
+ssh-add ~/.ssh/id_rsa_git
+```
+
+Caso você já possua uma chave SSH, você pode utiliza-la sem problemas, normalmente ela fica em **~/.ssh/id_rsa.pub**.
+
+
+&nbsp;
+
+Agora vamos copiar a nossa chave SSH para o clipboard. Para isso, vamos utilizar o comando cat.
+
+```bash
+cat ~/.ssh/id_rsa_git.pub | xclip -selection clipboard
+```
+
+&nbsp;
+
+Se você não tem o comando xclip instalado, você pode instalar com o comando abaixo:
+
+```bash
+sudo apt install xclip
+```
+
+&nbsp;
+
+Agora vamos adicionar a nossa chave SSH no GitHub: 
+
+- Vá até a página de configurações do GitHub
+- Depois em **SSH and GPG keys**
+- Clique em **New SSH key**
+- Cole a sua chave SSH no campo **Key**
+- Adicione um título para a sua chave SSH no campo **Title**
+- Click em **Add SSH key**
+
+Pronto! Sua chave SSH foi adicionada com sucesso.
+
+Agora volte no seu terminal e execute o comando abaixo:
+
+```bash
+ssh -T git@github.com
+```
+
+&nbsp;
+
+A saida do comando será essa:
+
+```bash
+Hi badtuxx! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+&nbsp;
+
+Pronto! Agora você já pode conectar o seu repositório local com o repositório remoto, afinal você acabou de validar que a sua chave está correta.
+
+&nbsp;
+
+### Conectando o repositório local com o repositório remoto
+
+Para conectar o repositório local com o repositório remoto, precisamos executar o comando git remote add origin e o endereço do repositório remoto.
+
+```bash
+git remote add origin git@github.com:badtuxx/DevChef.git
+```
+
+&nbsp;
+
+Aqui estamos utilizando o comando git remote para fazer essa conexão entre o repo local e o remoto. Vou explicar abaixo o que cada parte do comando faz.
+
+- **git remote** - Esse comando é utilizado para gerenciar os repositórios remotos. Ele é utilizado para adicionar, remover e listar os repositórios remotos.
+
+- **add** - Esse comando é utilizado para adicionar um repositório remoto.
+
+- **origin** - Esse é o nome que vamos dar para o nosso repositório remoto. Podemos dar qualquer nome, mas o nome origin é o mais comum, é o nosso padrão e que você vai ver em todos os lugares.
+
+- **git@github.com:badtuxx/DevChef.git** - Esse é o endereço do repositório remoto. Esse endereço é gerado pelo GitHub, quando você cria o repositório. Você pode copiar esse endereço e colar no seu terminal.
+
+Pronto, você já sabe o que o comando acima fez.
+
+
+Para vizualizar os repositórios remotos que você tem, basta executar o comando:
+
+```bash
+git remote -v
+```
+
+&nbsp;
+
+O comando acima irá listar todos os repositórios remotos que você tem, e o nome que você deu para cada um deles.
+
+```bash
+origin	git@github.com:badtuxx/DevChef.git (fetch)
+origin	git@github.com:badtuxx/DevChef.git (push)
+```
+
+&nbsp;
+
+Agora que já conectamos o nosso repositorio local com o repositório remoto, precisamos enviar o nosso conteúdo para o repositório remoto, enviar o nosso conteúdo para o GitHub.
+
+### Enviando o conteúdo para o repositório remoto
+
+Para enviar o conteúdo para o repositório remoto, precisamos executar o comando git push.
+
+```bash
+git push origin main
+```
+
+&nbsp;
+
+O comando git push é o comando utilizado para enviar o conteúdo do nosso repositório local para o repositório remoto. No comando acima estamos passando alguns parametros importantes, onde o **origin** é o nome do repositório remoto que você deu e o **main** é o nome da branch que você quer enviar, a nossa branch principal.
+
+A saida do comando do comando acima será algo parecido com isso:
+
+```bash
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 510 bytes | 510.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:badtuxx/DevChef.git
+ * [new branch]      main -> main
+```
+
+&nbsp;
+
+Pronto! Agora já temos o nosso conteúdo no repositório remoto, no GitHub.
+
+Você pode acessar o seu repositório remoto e ver que o conteúdo já está lá.
+
+Com isso, mesmo que o nosso repositorio local seja apagado, nós podemos clonar o repositório remoto e teremos o nosso conteúdo de volta. Mágico né?
 
 &nbsp;
