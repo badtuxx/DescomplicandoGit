@@ -12,10 +12,12 @@
     - [Adicionando a nossa chave SSH no GitHub](#adicionando-a-nossa-chave-ssh-no-github)
     - [Conectando o repositório local com o repositório remoto](#conectando-o-repositório-local-com-o-repositório-remoto)
     - [Enviando o conteúdo para o repositório remoto](#enviando-o-conteúdo-para-o-repositório-remoto)
-
+    - [Clonando o repositório remoto](#clonando-o-repositório-remoto)
+    - [Adicionando a nossa primeira receita](#adicionando-a-nossa-primeira-receita)
 
 *******
-<div id='proposta-do-material'/>  
+
+
 ## A proposta do material
 
 Durante o conteúdo do material, a pessoa estudante tera a oportunidade de aprender desde conceitos básicos sobre o Git, até tarefas mais avançadas que são parte do dia a dia de uma pessoa senior que trabalha como TI.
@@ -35,17 +37,16 @@ Depois é só abrir um PR lá no Github que faremos o commit para a main!
 
 Assim teremos um livro bem foda, totalmente criado pela comunidade Dev!
 
-
-## O Livro: DevChef
-<div id='livro-devchef'/> 
 &nbsp;
+## O Livro: DevChef ???
 
 Precisamos ter um nome para o nosso livro, eu vou deixar como DevChef por enquanto, mas é claro, se alguém tiver uma ideia melhor é só falar, abre uma issue aqui no Github com a sugestão!
 
 O endereço do repositório do nosso livro de receitas é o:
 
-
-🔗 [github.com/badtuxx/DevChef](https://github.com/badtuxx/DevChef)
+```bash
+https://github.com/badtuxx/**DevChef**
+```
 
 Muito bem, dito isso acho que já podemos começar!
 
@@ -53,8 +54,6 @@ Lembre-se, o nosso livro será vegano! Mesmo que você não seja, vamos fazer es
 
 &nbsp;
 ## Sobre o material Descomplicando o Git
-<div id='descomplicando-git'/>  
-
 
 Vamos criar o nosso livro de receitas, mas o objetivo principal é aprender sobre o Git. E aqui não queremos aprender o Git decoreba, queremos aprender o Git que é usado no dia a dia! 
 
@@ -67,7 +66,9 @@ Iremos ainda criar um e-book com esse conteúdo, então se você está lendo ess
 
 E claro, temos o repositório desse material lá no Github no seguinte endereço:
 
-🔗 [github.com/badtuxx/DescomplicandoGit](https://github.com/badtuxx/DescomplicandoGit)
+```bash
+https://github.com/badtuxx/DescomplicandoGit
+```
 
 O material está sobre a licensa GPL-3, então fique a vontade em aprender de forma totalmente gratuita, e ainda, ajudar adicionando ainda mais conteúdo nesse sensacional repositório, combinado?
 
@@ -79,9 +80,12 @@ Teremos 3 vagas para pessoas mantenedoras!
 
 Se você ainda está vendo esse texto, significa que ainda não temos essas pessoas escolhidas, então aqui está uma boa oportunidade!
 
+
 Como base para esse material nós vamos utilizar a documentação oficial do projeto, que você pode acessar através dessa url:
 
-🔗 [https://git-scm.com/docs](https://git-scm.com/docs)
+```bash
+https://git-scm.com/docs
+```
 
 Ahhh, e parabéns demais para a galera envolvida na construção dessa doc, e mais do que isso, parabéns para a galera empenhada em fazer a tradução desse material para o Português! Boa parte da documentação está em Português e com uma qualidade excelente!
 
@@ -89,15 +93,14 @@ Ahhh, e parabéns demais para a galera envolvida na construção dessa doc, e ma
 
 ## Vamos começar!
 
-### Git?
 
-<div id='git'/>  
+### O que é o git?
 
-A primeira coisa que temos que ter em mente, que o **Git** nada mais é do que um sistema de versionamento de código (DVCS), o git auxilia no compartilhamento de código, muito utilizado em empresas ou cenários opensource.
+A primeira coisa que temos que ter em mente, é o que é o Git. O Git nada mais é do que uma ferramenta para que você possa versionar o seu código, e mais do que isso, versionar o seu código e deixo organizado mesmo que compartilhado com milhares de pessoas desenvolvedoras.
 
 Eu poderia ficar aqui falando que o Git é um VCS como nós tinhamos o Subversion e outras velharias, mas com todo o respeito, a maioria das pessoas que trabalham hoje com código versionado e compartilhado, não tem nem a menor ideia do que um VCS, elas apenas sabem que quando você precisa versionar e ter um gerenciamento descente de código, você utiliza o Git.
 
-Ela foi criada em 2005 por Linus Torvalds, o criador do Linux. Ele criou o Git pois estava insatisfeito com os versionadores de código da época, queria algo mais robusto, e que poderia atender da melhor forma possível.
+Ela foi criada em 2005 por Linus Torvalds, o criador do Linux. Ele criou o Git pois estava insatisfeito com funcionavam os versionadores de códigos da época. Fácil né. hahahha
 
 Pode ser uma opinião muito forte sobre, mas é a realidade que eu tenho visto nos últimos 10 anos, pelo menos.
 
@@ -105,7 +108,7 @@ Pois bem, dito isso, o que precisamos entender é como o Git funciona, e para is
 
 Então chegou a hora de começar a criar o nosso livro de receitas DevChef e iniciar a nossa jornada de aprendizado com o Git.
 
-&nbsp;
+
 ### Criando o repo do nosso livro
 
 Muito bem, agora já sabemos que o nosso projeto será um livro de receitas, o que precisamos fazer é começar a trabalhar!
@@ -139,7 +142,7 @@ E como se fosse o página principal de um site, a primeira página do nosso repo
 
 Para o nosso livro, vamos deixar nesse arquivo todo o conteúdo. Nós vamos deixar bonitinho, vai ser fácil!
 
-Outra coisa, você viu que a o final do nome do arquivo é terminado com **.md**, isso indica que estamos querendo criar um arquivo utilizando a linguigem de marcação Markdown, que você pode ver mais detalhes [aqui](https://pt.wikipedia.org/wiki/Markdown).
+Outra coisa, você viu que a o final do nome do arquivo é terminado com .md, isso indica que estamos querendo criar um arquivo utilizando a linguigem de marcação Markdown, que você pode ver mais detalhes [aqui](https://pt.wikipedia.org/wiki/Markdown).
 
 Nós vamos aprender algumas coisa sobre como utilizar o Markdown, pois precisamos deixar o nosso livro bonitinho!
 
@@ -646,5 +649,220 @@ Pronto! Agora já temos o nosso conteúdo no repositório remoto, no GitHub.
 Você pode acessar o seu repositório remoto e ver que o conteúdo já está lá.
 
 Com isso, mesmo que o nosso repositorio local seja apagado, nós podemos clonar o repositório remoto e teremos o nosso conteúdo de volta. Mágico né?
+
+&nbsp;
+
+### Clonando o repositório remoto
+
+Vamos imaginar a seguinte situação: Sem querer você apagou o seu repositório local, e agora você quer ter o seu conteúdo de volta. Como você faz isso?
+
+A nossa sorte é que já temos o conteúdo do nosso projeto também repositorio remoto, no GitHub. Então, para ter o nosso conteúdo de volta, basta clonar o repositório remoto.
+
+Antes de clonar, vamos remover o nosso repositório local, para simularmos a situação de ter apagado o nosso repositório local.
+
+```bash
+cd ..  
+rm -rf DevChef
+```
+
+&nbsp;
+
+Agora vamos clonar o repositório remoto.
+
+```bash
+git clone git@github.com:badtuxx/DevChef.git
+```
+
+&nbsp;
+
+O comando git clone é utilizado para clonar um repositório remoto. No comando acima estamos passando o endereço do repositório remoto, que é o mesmo que utilizamos para conectar o repositório local com o repositório remoto.
+
+A saida do comando será algo parecido com isso:
+
+```bash
+Cloning into 'DevChef'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+```
+
+&nbsp;
+
+Pronto, você já tem o seu conteúdo de volta. Agora você pode continuar trabalhando no seu projeto, no nosso livro de receitas.
+
+&nbsp;
+
+### Adicionando a nossa primeira receita
+
+Agora que já temos o nosso projeto configurado, vamos começar a adicionar as nossas receitas.
+
+Lembrando que o nosso projeto é criar um livro de receitas veganas para um nosso almoço de comemoração, após finalizarmos o conteúdo de material, será o nosso ritual de comemoração. Claro, se você quiser e puder.
+
+A nossa primeira receita será uma receita de uma arroz para iniciar o cardápio do nosso almoço. Simples, sem muita frescura, mas que vai deixar todo mundo com água na boca.
+
+Vamos criar um arquivo chamado **arroz.md** dentro da pasta **receitas**.
+
+```bash
+cd DevChef
+mkdir receitas
+cd receitas
+touch arroz.md
+```
+
+&nbsp;
+
+Pronto, o arquivo **arroz.md** já está criado. Agora vamos adicionar o conteúdo do nosso arquivo. Para isso você pode utilizar o editor de texto de sua preferência.
+
+```bash
+# Receita 1 - Arroz
+
+&nbsp;
+## Para quantas pessoas?
+
+- 4 pessoas
+
+&nbsp;
+## Ingredientes
+
+- 3 xícara de arroz
+- 6 xícaras de água
+- 1 colher de sal
+- 3 colheres de azeite ou óleo de sua preferência
+- 3 dentes de alho picados
+- Sementes de girassol a gosto
+
+&nbsp;
+## Modo de preparo
+
+Adicione o azeite ou óleo em uma panela com fogo médio, em seguida adicione o alho e as sementes de girassol e deixe fritar até o alho ficar dourado. Em seguida adicione o arroz e o sal, mexa bem até o arroz ficar bem brilhoso. Adicione a água, e deixe cozinhar até a agua secar. Quando a agua secar, desligue o fogo e deixe descansar por 5 minutos com a panela tampada.
+
+Em seguida está pronto para servir.
+
+&nbsp;
+
+## Dicas
+
+- Você pode adicionar temperos a gosto, como cebola, pimenta, cebolinha, etc.
+```
+
+&nbsp;
+
+Pronto, já temos a nossa primeira receita criada, o que precisamos agora é adicionar o arquivo ao nosso repositório local.
+
+```bash
+git add arroz.md
+```
+
+&nbsp;
+
+Vamos verificar o status do nosso repositório local.
+
+```bash
+git status
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   arroz.md
+
+```
+
+&nbsp;
+
+Na sequência vamos fazer o commit do nosso arquivo.
+
+```bash
+git commit -m "Adicionando a receita para fazer o arroz"
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+[main 135f391] Adicionando a receita para fazer o arroz
+ 1 file changed, 29 insertions(+)
+ create mode 100644 receitas/arroz.md
+
+```
+
+&nbsp;
+
+Hora de enviar o nosso conteúdo para o repositório remoto.
+
+```bash
+git push origin main
+```
+
+&nbsp;
+
+A saida do comando será algo parecido com isso:
+
+```bash
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 32 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 774 bytes | 774.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:badtuxx/DevChef.git
+   1cd4e1b..135f391  main -> main
+
+```
+
+&nbsp;
+
+Pronto, a nossa primeira receita já está em nosso repositorio remoto e você já pode conferir no GitHub.
+
+&nbsp;
+
+Para finalizar, vamos adicionar o nosso arquivo **arroz.md** ao nosso arquivo **README.md** no campo de nossa primeira receita.
+
+```markdown
+# DevChef
+
+## Sobre o Projeto
+
+Livro criado por pessoas que estavam aprendendo a ferramenta de versionamento de códigos Git com o Jeferson na LINUXtips.
+
+&nbsp;
+## Livro de Receitas Veganas
+
+O Livro foi iniciado com cinco receitas adicionadas e testadas pelo Jeferson, as demais foram adicionadas pela comunidade de pessoas que estavam focadas em aprender Git e ter um almoço vegano!
+
+&nbsp;
+## Receitas
+
+&nbsp;
+#### Conteúdo 
+
+&nbsp;
+#### Receita 1
+- [Arroz dos Devs!](receitas/arroz.md)
+
+&nbsp;
+#### Receita 2
+
+&nbsp;
+#### Receita 3
+
+&nbsp;
+#### Receita 4
+
+&nbsp;
+#### Receita 5
+```
+
+&nbsp;
+
+Pronto, já ficou melhor o nosso README.md, assim as pessoas conseguiram ver a nossa primeira receita.
 
 &nbsp;
