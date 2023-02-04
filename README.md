@@ -1,6 +1,20 @@
 # Descomplicando o GIT
 
-&nbsp;
+*******
+- [Descomplicando o GIT](#descomplicando-o-git)
+  - [A proposta do material](#a-proposta-do-material)
+  - [O Livro: DevChef ???](#o-livro-devchef-)
+  - [Sobre o material Descomplicando o Git](#sobre-o-material-descomplicando-o-git)
+  - [Vamos começar!](#vamos-começar)
+    - [O que é o git?](#o-que-é-o-git)
+    - [Criando o repo do nosso livro](#criando-o-repo-do-nosso-livro)
+    - [Compartilhando o nosso repositório](#compartilhando-o-nosso-repositório)
+    - [Adicionando a nossa chave SSH no GitHub](#adicionando-a-nossa-chave-ssh-no-github)
+    - [Conectando o repositório local com o repositório remoto](#conectando-o-repositório-local-com-o-repositório-remoto)
+    - [Enviando o conteúdo para o repositório remoto](#enviando-o-conteúdo-para-o-repositório-remoto)
+
+*******
+<div id='proposta-do-material'/>  
 ## A proposta do material
 
 Durante o conteúdo do material, a pessoa estudante tera a oportunidade de aprender desde conceitos básicos sobre o Git, até tarefas mais avançadas que são parte do dia a dia de uma pessoa senior que trabalha como TI.
@@ -628,6 +642,8 @@ To github.com:badtuxx/DevChef.git
 &nbsp;
 
 Pronto! Agora já temos o nosso conteúdo no repositório remoto, no GitHub.
+
+Você pode acessar o seu repositório remoto e ver que o conteúdo já está lá.
 
 Com isso, mesmo que o nosso repositorio local seja apagado, nós podemos clonar o repositório remoto e teremos o nosso conteúdo de volta. Mágico né?
 
