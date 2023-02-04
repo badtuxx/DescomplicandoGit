@@ -13,6 +13,7 @@
     - [Conectando o repositório local com o repositório remoto](#conectando-o-repositório-local-com-o-repositório-remoto)
     - [Enviando o conteúdo para o repositório remoto](#enviando-o-conteúdo-para-o-repositório-remoto)
 
+
 *******
 <div id='proposta-do-material'/>  
 ## A proposta do material
@@ -34,16 +35,17 @@ Depois é só abrir um PR lá no Github que faremos o commit para a main!
 
 Assim teremos um livro bem foda, totalmente criado pela comunidade Dev!
 
+
+## O Livro: DevChef
+<div id='livro-devchef'/> 
 &nbsp;
-## O Livro: DevChef ???
 
 Precisamos ter um nome para o nosso livro, eu vou deixar como DevChef por enquanto, mas é claro, se alguém tiver uma ideia melhor é só falar, abre uma issue aqui no Github com a sugestão!
 
 O endereço do repositório do nosso livro de receitas é o:
 
-```bash
-https://github.com/badtuxx/**DevChef**
-```
+
+🔗 [github.com/badtuxx/DevChef](https://github.com/badtuxx/DevChef)
 
 Muito bem, dito isso acho que já podemos começar!
 
@@ -51,6 +53,8 @@ Lembre-se, o nosso livro será vegano! Mesmo que você não seja, vamos fazer es
 
 &nbsp;
 ## Sobre o material Descomplicando o Git
+<div id='descomplicando-git'/>  
+
 
 Vamos criar o nosso livro de receitas, mas o objetivo principal é aprender sobre o Git. E aqui não queremos aprender o Git decoreba, queremos aprender o Git que é usado no dia a dia! 
 
@@ -63,9 +67,7 @@ Iremos ainda criar um e-book com esse conteúdo, então se você está lendo ess
 
 E claro, temos o repositório desse material lá no Github no seguinte endereço:
 
-```bash
-https://github.com/badtuxx/DescomplicandoGit
-```
+🔗 [github.com/badtuxx/DescomplicandoGit](https://github.com/badtuxx/DescomplicandoGit)
 
 O material está sobre a licensa GPL-3, então fique a vontade em aprender de forma totalmente gratuita, e ainda, ajudar adicionando ainda mais conteúdo nesse sensacional repositório, combinado?
 
@@ -77,12 +79,9 @@ Teremos 3 vagas para pessoas mantenedoras!
 
 Se você ainda está vendo esse texto, significa que ainda não temos essas pessoas escolhidas, então aqui está uma boa oportunidade!
 
-
 Como base para esse material nós vamos utilizar a documentação oficial do projeto, que você pode acessar através dessa url:
 
-```bash
-https://git-scm.com/docs
-```
+🔗 [https://git-scm.com/docs](https://git-scm.com/docs)
 
 Ahhh, e parabéns demais para a galera envolvida na construção dessa doc, e mais do que isso, parabéns para a galera empenhada em fazer a tradução desse material para o Português! Boa parte da documentação está em Português e com uma qualidade excelente!
 
@@ -90,14 +89,15 @@ Ahhh, e parabéns demais para a galera envolvida na construção dessa doc, e ma
 
 ## Vamos começar!
 
+### Git?
 
-### O que é o git?
+<div id='git'/>  
 
-A primeira coisa que temos que ter em mente, é o que é o Git. O Git nada mais é do que uma ferramenta para que você possa versionar o seu código, e mais do que isso, versionar o seu código e deixo organizado mesmo que compartilhado com milhares de pessoas desenvolvedoras.
+A primeira coisa que temos que ter em mente, que o **Git** nada mais é do que um sistema de versionamento de código (DVCS), o git auxilia no compartilhamento de código, muito utilizado em empresas ou cenários opensource.
 
 Eu poderia ficar aqui falando que o Git é um VCS como nós tinhamos o Subversion e outras velharias, mas com todo o respeito, a maioria das pessoas que trabalham hoje com código versionado e compartilhado, não tem nem a menor ideia do que um VCS, elas apenas sabem que quando você precisa versionar e ter um gerenciamento descente de código, você utiliza o Git.
 
-Ela foi criada em 2005 por Linus Torvalds, o criador do Linux. Ele criou o Git pois estava insatisfeito com funcionavam os versionadores de códigos da época. Fácil né. hahahha
+Ela foi criada em 2005 por Linus Torvalds, o criador do Linux. Ele criou o Git pois estava insatisfeito com os versionadores de código da época, queria algo mais robusto, e que poderia atender da melhor forma possível.
 
 Pode ser uma opinião muito forte sobre, mas é a realidade que eu tenho visto nos últimos 10 anos, pelo menos.
 
@@ -105,7 +105,7 @@ Pois bem, dito isso, o que precisamos entender é como o Git funciona, e para is
 
 Então chegou a hora de começar a criar o nosso livro de receitas DevChef e iniciar a nossa jornada de aprendizado com o Git.
 
-
+&nbsp;
 ### Criando o repo do nosso livro
 
 Muito bem, agora já sabemos que o nosso projeto será um livro de receitas, o que precisamos fazer é começar a trabalhar!
@@ -139,7 +139,7 @@ E como se fosse o página principal de um site, a primeira página do nosso repo
 
 Para o nosso livro, vamos deixar nesse arquivo todo o conteúdo. Nós vamos deixar bonitinho, vai ser fácil!
 
-Outra coisa, você viu que a o final do nome do arquivo é terminado com .md, isso indica que estamos querendo criar um arquivo utilizando a linguigem de marcação Markdown, que você pode ver mais detalhes [aqui](https://pt.wikipedia.org/wiki/Markdown).
+Outra coisa, você viu que a o final do nome do arquivo é terminado com **.md**, isso indica que estamos querendo criar um arquivo utilizando a linguigem de marcação Markdown, que você pode ver mais detalhes [aqui](https://pt.wikipedia.org/wiki/Markdown).
 
 Nós vamos aprender algumas coisa sobre como utilizar o Markdown, pois precisamos deixar o nosso livro bonitinho!
 
@@ -648,4 +648,3 @@ Você pode acessar o seu repositório remoto e ver que o conteúdo já está lá
 Com isso, mesmo que o nosso repositorio local seja apagado, nós podemos clonar o repositório remoto e teremos o nosso conteúdo de volta. Mágico né?
 
 &nbsp;
-
