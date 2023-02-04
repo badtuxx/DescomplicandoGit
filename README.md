@@ -90,3 +90,279 @@ Pode ser uma opinião muito forte sobre, mas é a realidade que eu tenho visto n
 Pois bem, dito isso, o que precisamos entender é como o Git funciona, e para isso é fundamental começarmos entender isso praticando, essa é a nossa maneira de ensinar!
 
 Então chegou a hora de começar a criar o nosso livro de receitas DevChef e iniciar a nossa jornada de aprendizado com o Git.
+
+
+### Criando o repo do nosso livro
+
+Muito bem, agora já sabemos que o nosso projeto será um livro de receitas, o que precisamos fazer é começar a trabalhar!
+
+Para isso vamos criar um diretório chamado DevChef, conforme abaixo:
+
+```bash
+mkdir DevChef
+```
+
+&nbsp;
+Pronto, agora vamos acessa-lo:
+
+```bash
+cd DevChef/
+```
+&nbsp;
+
+Agora vamos criar uma arquivo chamado README.md e te explico no caminho o porque é importante ter esse cara em nosso repo.
+
+```bash
+touch README.md
+```
+&nbsp;
+
+Agora que já criamos o arquivo, eu posso te explicar a sua utilidade e porque ele é importante.
+
+O README.md é o arquivo onde você coloca os detalhes do seu repo, do seu projeto.
+
+E como se fosse o página principal de um site, a primeira página do nosso repo. Quando alguém acessar o nosso repo, ele será recebido por essa página.
+
+Para o nosso livro, vamos deixar nesse arquivo todo o conteúdo. Nós vamos deixar bonitinho, vai ser fácil!
+
+Outra coisa, você viu que a o final do nome do arquivo é terminado com .md, isso indica que estamos querendo criar um arquivo utilizando a linguigem de marcação Markdown, que você pode ver mais detalhes [aqui](https://pt.wikipedia.org/wiki/Markdown).
+
+Nós vamos aprender algumas coisa sobre como utilizar o Markdown, pois precisamos deixar o nosso livro bonitinho!
+
+Muito pooom! Todo mundo já sabe o que é esse tal de README.md, agora vamos colocar algum conteúdo lá dentro!
+
+Para isso você pode utilizar o VI ou outro editor de textos de sua preferencia. Enquanto eu escrevo esse material, estou utilizando o Visual Studio Code, super recomendo pois ele vai agilizar e muito a sua vida. Mas se você não tiver, não tem problemas, utilize o editor que você achar melhor.
+
+Durante a construção desse material estou utilizando o Linux, então todos os exemplos de linha de comando são realizadas no Linux.
+
+
+Adicione o seguinte conteúdo no arquivo:
+
+```markdown
+# DevChef
+
+## Sobre o Projeto
+
+Livro criado por pessoas que estavam aprendendo a ferramenta de versionamento de códigos Git com o Jeferson na LINUXtips.
+
+&nbsp;
+## Livro de Receitas Veganas
+
+O Livro foi iniciado com cinco receitas adicionadas e testadas pelo Jeferson, as demais foram adicionadas pela comunidade de pessoas que estavam focadas em aprender Git e ter um almoço vegano!
+
+&nbsp;
+## Receitas
+
+&nbsp;
+#### Conteúdo 
+
+&nbsp;
+#### Receita 1
+
+&nbsp;
+#### Receita 2
+
+&nbsp;
+#### Receita 3
+
+&nbsp;
+#### Receita 4
+
+&nbsp;
+#### Receita 5
+```
+
+&nbsp;
+
+Pronto, acho que temos uma boa definição inicial do nosso livro, e ainda montamos o esqueleto inicial do nosso livro.
+
+Muito bem, já temos o arquivo mas ainda não fizemos nada em relação ao Git.
+
+Precisamos falar para o Git que queremos que ele cuide de nosso arquivo, do nosso diretório. Para isso, antes de mais nada precisamos instalar o Git no Linux caso ainda você não tenha.
+
+Para realizar a instalação do Git no Ubuntu, utilize o comando abaixo:
+
+```bash
+sudo apt install git
+```
+
+&nbsp;
+
+Você pode verificar se o Git foi instalado corretamente utilizando o comando abaixo:
+
+```bash
+git --version
+```
+
+&nbsp;
+
+Para ver como instalar o git no Windows, você pode acessar o link [aqui](https://git-scm.com/download/win). 
+
+Já para o MacOS, você pode acessar o link [aqui](https://git-scm.com/download/mac).
+
+&nbsp;
+
+Após fazer a instalação, é hora de falar para ele que queremos que ele comece a cuidar de nosso diretório.
+
+Mas antes de começar, precisamos fazer algumas configurações em nosso git. Informações como o nome do usuário, email, editor de texto e principalmente o nome da branch. Hoje em dia o nome dca branch padrão é o main, se ainda não é o seu caso, você pode alterar utilizando o comando abaixo:
+
+```bash
+git config --global init.defaultBranch main
+```
+
+Nós ainda vamos falar muito sobre branches e vou te explicar com todos os detalhes, mas por enquanto pensa que é o nome da sua mesa de trabalho atual, vamos imaginar que é a visão que você tem do seu projeto atual. Eu digo visão, pois você pode ter várias mesas de trabalho, e cada uma delas é uma branch, e cada uma com uma visão diferente do seu projeto.
+
+Confuso? Sim! Mas somente agora!
+Logo menos você vai entender tudo e ver o quanto isso salva vidas!
+
+Vamos somente definir uma coisa, a nossa branch main vai ser a nossa principal, como se fosse a versão estável, a versão que poderia ser publicada em produção, certo?
+
+Por enquanto é isso sobre branches, mas como eu disse, vamos falar muito sobre elas.
+
+&nbsp;
+
+Agora sim podemos iniciar o nosso repositório Git. Para isso, vamos utilizar o comando abaixo:
+
+```bash
+git init
+```
+
+A saída do comando será a seguinte:
+
+```bash
+Initialized empty Git repository in /home/jeferson/REPOS/DevChef/.git/
+```
+
+&nbsp;
+
+O comando git init é o comando utilizado para iniciar o nosso repositorio, ou seja, ele vai criar o nosso .git, que é o diretório onde o Git vai guardar todas as informações sobre o nosso projeto.
+
+```bash
+ls .git/
+```
+
+&nbsp;
+
+Dentro do diretório, você vai encontrar todos os arquivos que o Git precisa para organizar a nossa casa, o nosso projeto. Nós ainda vamos voltar algumas vezes aqui para explicar o que está acontecendo, mas por enquanto, somente saiba que ele existe e é aqui que estão todas as informações do nosso projeto, como as branches, os commits, as tags, etc.
+
+Mais uma vez, eu sei que ainda não vimos nada disso, mas vamos ver, é só pra deixar você ainda mais curiosa!
+
+&nbsp;
+
+Vamos voltar as atenções para o nosso repo e para o conteúdo que estamos criando.
+
+Um comando que é muito útil e que vai trazer o status atual do nosso projeto é o comando git status.
+
+```bash
+git status
+```
+
+A saída do comando será a seguinte:
+
+```bash
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+&nbsp;
+
+Perceba que o Git nos informa que estamos na branch main, que ainda não temos nenhum commit e que temos um arquivo, que existe, mas que ainda não foi adicionado ao nosso repositório.
+
+Para adicionarmos o nosso arquivo ao nosso repositório, vamos utilizar o comando git add.
+
+```bash
+git add README.md
+```
+
+&nbsp;
+
+Vamos executar o comando git status novamente para ver o que aconteceu.
+
+```bash
+git status
+```
+
+A saída do comando será a seguinte:
+
+```bash
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   README.md
+```
+
+&nbsp;
+
+Agora nós temos um arquivo que foi adicionado ao nosso repositório, mas isso ainda não garante o controle de versão, pois ainda não fizemos nenhum commit.
+
+Para entender melhor o que o comando acima fez, precisamos entender os três estados do Git.
+
+O Git trabalha com três estados, o estado de trabalho, o estado de preparação e o estado de commit.
+
+É bem comum você ver esses três estados em inglês, então normamente você vai ver o Working Directory, o Staging Area e o Repository.
+
+- O Working Directory é o diretório onde você está trabalhando, onde você está criando os seus arquivos, onde você está fazendo as suas alterações.
+
+- O Staging Area é o local onde você vai adicionar os arquivos que você quer que o Git comece a controlar, ou seja, o Git vai começar a monitorar as alterações que você fizer nesses arquivos.
+
+- O Repository é o local onde o Git vai guardar todas as informações sobre o seu projeto, como as branches, os commits, as tags, etc. Esse é o nosso diretório .git.
+
+Quando estamos usando o comando git add, nós estamos adicionando os arquivos que queremos que o Git comece a controlar, ou seja, estamos adicionando os arquivos ao Staging Area.
+
+Então temos esse arquivo controlado pelo Git, mas ainda não temos um commit. O commit é o ato de adicionar as alterações que você fez no seu arquivo ao seu repositório.
+
+É importante você conhecer esses três estados, pois lá pra frente você vai precisar deles para saber como atuar em cada situação.
+
+&nbsp;
+
+Agora que já entendemos o que o comando git add faz, vamos fazer o nosso primeiro commit.
+
+```bash
+git commit -m "Adicionando o arquivo README.md"
+```
+
+&nbsp;
+
+
+A saída do comando será a seguinte:
+
+```bash
+[main (root-commit) 1cd4e1b] Adicionando o arquivo README.md
+ 1 file changed, 31 insertions(+)
+ create mode 100644 README.md
+```
+
+&nbsp;
+
+Perceba que o Git nos informa que estamos na branch main, que fizemos um commit e que adicionamos um arquivo.
+
+Vamos chamar novamente o git status para ver o que aconteceu.
+
+```bash
+git status
+```
+
+A saída do comando será a seguinte:
+
+```bash
+On branch main
+nothing to commit, working tree clean
+```
+
+&nbsp;
+
+O que ele está dizendo que não precisamos adicionar mais nada, pois já adicionamos o arquivo que queríamos adicionar.
+
+Para cada commit, o git cria um checksum, que é um código que identifica o commit. Esse código é gerado a partir do conteúdo do arquivo, então se você fizer uma alteração no arquivo, o checksum vai mudar. Isso é pra garantir que você não vai perder nenhuma alteração.
+
+&nbsp;
